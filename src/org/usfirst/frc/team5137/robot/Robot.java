@@ -8,6 +8,7 @@
 package org.usfirst.frc.team5137.robot;
 
 import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team5137.robot.subsystems.IntakeRoller;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -18,6 +19,9 @@ public class Robot extends TimedRobot {
     Joystick jackBlack;
     public static DriveTrain driveTrain;
     public static OI oi;
+    public static IntakeRoller intakeRoller;
+    
+    
     
     public void robotInit() {
 	    	RobotMap.init();
