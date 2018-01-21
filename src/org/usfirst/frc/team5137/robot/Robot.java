@@ -33,34 +33,10 @@ public class Robot extends TimedRobot {
 	public void teleopPeriodic() {
 	    Scheduler.getInstance().run();
 	    
-	    /*double-check these
-		double leftJoyX = jackBlack.getRawAxis(0);
-		double leftJoyY = jackBlack.getRawAxis(1);
-		double rightJoyX = jackBlack.getRawAxis(4);
-		double rightJoyY = jackBlack.getRawAxis(5);
-		//boolean aIsPressed = jackBlack.getRawButton(1);
-		boolean xIsPressed = jackBlack.getRawButton(3);
-		boolean bIsPressed = jackBlack.getRawButton(2);
-		boolean yIsPressed = jackBlack.getRawButton(4);
-		boolean rightBumperIsPressed = jackBlack.getRawButton(6);
-		boolean leftBumperIsPressed = jackBlack.getRawButton(5);
-		
-		if (rightBumperIsPressed) driveMode = 0;
+	    /*if (rightBumperIsPressed) driveMode = 0;
 		if (leftBumperIsPressed) driveMode = 1;
 		
-		switch (driveMode) {
-			case 0: // if arcade drive (gonna have to change sign values)
-				leftDrive.set(leftJoyY + 0.5 * rightJoyX);
-				rightDrive.set(leftJoyY - 0.5 * rightJoyX);
-				slideDrive.set(leftJoyX);
-				break;
-			case 1: // if tank drive
-				leftDrive.set(leftJoyY);
-				rightDrive.set(rightJoyY);
-				slideDrive.set(0); // probably unnecessary, but just in case
-				break;
-			default: break;
-		}
+		
 		if (yIsPressed) { 
 			shooterMotor.set(1);
 			Timer.delay(0.5);

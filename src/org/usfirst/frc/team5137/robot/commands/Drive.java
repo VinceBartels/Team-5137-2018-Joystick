@@ -12,7 +12,7 @@ public class Drive extends Command {
 	}
 	
 	public void execute() {
-		Robot.driveTrain.driveWillGetNewName(Robot.oi.jackBlack);
+		Robot.driveTrain.driveWillGetNewName(Robot.oi.jackBlack, Robot.oi.arcadeModeBumper, Robot.oi.tankModeBumper);
 		
 	}
 	
