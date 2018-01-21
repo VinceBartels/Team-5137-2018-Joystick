@@ -8,7 +8,11 @@
 package org.usfirst.frc.team5137.robot;
 
 import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
+
 import org.usfirst.frc.team5137.robot.subsystems.Shooter;
+
+import org.usfirst.frc.team5137.robot.subsystems.IntakeRoller;
+
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -20,6 +24,9 @@ public class Robot extends TimedRobot {
     public static DriveTrain driveTrain;
     public static Shooter shooter;
     public static OI oi;
+    public static IntakeRoller intakeRoller;
+    
+    
     
     public void robotInit() {
 	    	RobotMap.init();
