@@ -7,54 +7,51 @@
 
 package org.usfirst.frc.team5137.robot;
 
+import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
+
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.TimedRobot;
-//import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
 	
-    Joystick marinara;
-    
-    Joystick leftJoy;
-    Joystick rightJoy;
-    
-    Victor leftDrive;
-    Victor rightDrive;
-    Spark slideDrive;
-    int driveMode; // 0 is arcade, 1 is tank
+    Joystick jackBlack;
+    public static DriveTrain driveTrain;
+    public static OI oi;
+
+    //int driveMode; // 0 is arcade, 1 is tank
     
     public void robotInit() {
+    	RobotMap.init();
+    	driveTrain = new DriveTrain();
     	
-    	leftJoy = new Joystick(0);
-    	rightJoy = new Joystick(1);
     	
-    	//maybe leftDrive should be inverted instead?
-    	leftDrive = new Victor(0);
-    	rightDrive = new Victor(1);
-    	rightDrive.setInverted(true);
-    	slideDrive = new Spark (2);
-    	
-        driveMode = 0; //initiates to arcade drive mode
+    	oi = new OI();
+        //driveMode = 0; //initiates to arcade drive mode
     }
 
 	public void teleopPeriodic() {
+	    Scheduler.getInstance().run();
 	    
-	    //double-check these
-		double leftJoyX = leftJoy.getRawAxis(0);
-		double leftJoyY = leftJoy.getRawAxis(1);
-		double rightJoyX = rightJoy.getRawAxis(0);
-		double rightJoyY = rightJoy.getRawAxis(1);
-		boolean rightTriggerIsPressed = rightJoy.getRawButton(1);
-		boolean leftTriggerIsPressed = leftJoy.getRawButton(1);
-		if (rightTriggerIsPressed) driveMode = 0;
-		if (leftTriggerIsPressed) driveMode = 1;
+	    /*double-check these
+		double leftJoyX = jackBlack.getRawAxis(0);
+		double leftJoyY = jackBlack.getRawAxis(1);
+		double rightJoyX = jackBlack.getRawAxis(4);
+		double rightJoyY = jackBlack.getRawAxis(5);
+		//boolean aIsPressed = jackBlack.getRawButton(1);
+		boolean xIsPressed = jackBlack.getRawButton(3);
+		boolean bIsPressed = jackBlack.getRawButton(2);
+		boolean yIsPressed = jackBlack.getRawButton(4);
+		boolean rightBumperIsPressed = jackBlack.getRawButton(6);
+		boolean leftBumperIsPressed = jackBlack.getRawButton(5);
+		
+		if (rightBumperIsPressed) driveMode = 0;
+		if (leftBumperIsPressed) driveMode = 1;
 		
 		switch (driveMode) {
 			case 0: // if arcade drive (gonna have to change sign values)
-				leftDrive.set(0.5 * leftJoyY + 0.5 * rightJoyX);
-				rightDrive.set(0.5 * leftJoyY - 0.5 * rightJoyX);
+				leftDrive.set(leftJoyY + 0.5 * rightJoyX);
+				rightDrive.set(leftJoyY - 0.5 * rightJoyX);
 				slideDrive.set(leftJoyX);
 				break;
 			case 1: // if tank drive
@@ -64,31 +61,24 @@ public class Robot extends TimedRobot {
 				break;
 			default: break;
 		}
-		
-	 	/* cross button activates intake when held
-		if (crossIsPressed) {
-			intake.set(0.5);
-		} else {
-			intake.set(0);
-		}
-		
-		// square button activates climber when held
-		if (squareIsPressed) {
-			climber.set(1);
-		} else {
-			climber.set(0);
-		}		
-		
-		// up button activates shooter when held
-		if (upIsPressed) {
-			shooter.set(1);
+		if (yIsPressed) { 
+			shooterMotor.set(1);
 			Timer.delay(0.5);
-			feeder.set(1);
-		} else {
-			shooter.set(0);
-			feeder.set(0);
+			feederMotor.set(-1);
 		}
-		*/
+		if (bIsPressed) {
+			climber.set(1.0);
+		}
+		if (xIsPressed) {
+			intakeMotor.set(1);
+		}
+		else {
+			climber.set(0);
+			feederMotor.set(0);
+			shooterMotor.set(0);
+			intakeMotor.set(0);	
+		}*/
+	 	
 	}
 }
 
