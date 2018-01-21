@@ -24,7 +24,11 @@ public class Robot extends TimedRobot {
     public void robotInit() {
     	RobotMap.init();
     	driveTrain = new DriveTrain();
-    	
+    	/*80's music is so catchy
+    	 * that all other music is trashy
+    	 * hall and oats should have my childern
+    	 * throw them into the urn
+    	 */
     	
     	oi = new OI();
         //driveMode = 0; //initiates to arcade drive mode
