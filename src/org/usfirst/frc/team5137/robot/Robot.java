@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team5137.robot;
 
+import org.usfirst.frc.team5137.robot.subsystems.Climber;
 import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5137.robot.subsystems.Shooter;
 import org.usfirst.frc.team5137.robot.subsystems.IntakeRoller;
@@ -21,6 +22,8 @@ public class Robot extends TimedRobot {
     public static Shooter shooter;
     public static OI oi;
     public static IntakeRoller intakeRoller;
+    public static Climber climber;
+    
     
     
     
@@ -29,6 +32,7 @@ public class Robot extends TimedRobot {
 	    	driveTrain = new DriveTrain();
 	    	shooter = new Shooter();
 	    	intakeRoller = new IntakeRoller();
+	    	climber = new Climber();
 	    	
 	    	
 	    	/*80's music is so catchy
