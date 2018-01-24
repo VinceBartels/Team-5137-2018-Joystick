@@ -7,11 +7,13 @@
 
 package org.usfirst.frc.team5137.robot;
 
+//import org.usfirst.frc.team5137.robot.commands.autoDriveStraight;
 import org.usfirst.frc.team5137.robot.subsystems.Climber;
 import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5137.robot.subsystems.Shooter;
 import org.usfirst.frc.team5137.robot.subsystems.IntakeRoller;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
@@ -22,7 +24,8 @@ public class Robot extends TimedRobot {
     public static Climber climber;
     
     public static OI oi;
-    
+	Command autonomousCommand;
+
     public void robotInit() {
 	    RobotMap.init();
 	   	RobotMap.gyro.calibrate();
@@ -32,6 +35,8 @@ public class Robot extends TimedRobot {
     	climber = new Climber();
     
     	oi = new OI(); //must be instantiated AFTER all the subsystems
+    	//autonomousCommand = new autoDriveStraight();
+    	
     }
     
     /**
@@ -48,6 +53,7 @@ public class Robot extends TimedRobot {
     }
     
     public void autonomousInit() {
+    	//if (autonomousCommand != null) autonomousCommand.start();
     	
     }
     
@@ -56,8 +62,8 @@ public class Robot extends TimedRobot {
     }
     
     public void teleopInit() {
-    		//stop any autonomous stuff
-
+    	// if (autonomousCommand != null)
+			//autonomousCommand.cancel();
     }
     
 	public void teleopPeriodic() {
