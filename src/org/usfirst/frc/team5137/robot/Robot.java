@@ -24,19 +24,14 @@ public class Robot extends TimedRobot {
     public static OI oi;
     
     public void robotInit() {
-	    	RobotMap.init();
-	    	driveTrain = new DriveTrain();
-	    shooter = new Shooter();
-	    	intakeRoller = new IntakeRoller();
-	    	climber = new Climber();
-	    	
-	    
-	    	/*80's music is so catchy
-	    	 * that all other music is trashy
-	    	 * hall and oats should have my childern
-	    	 * throw them into the urn
-	    	 */	    	
-	    	oi = new OI(); //must be instantiated AFTER all the subsystems
+	    RobotMap.init();
+	   	RobotMap.gyro.calibrate();
+	   	driveTrain = new DriveTrain();
+	   	shooter = new Shooter();
+	   	intakeRoller = new IntakeRoller();
+    	climber = new Climber();
+    
+    	oi = new OI(); //must be instantiated AFTER all the subsystems
     }
     
     /**
