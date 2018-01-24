@@ -63,8 +63,9 @@ public class Robot extends TimedRobot {
     
     public void teleopInit() {
     		//stop any autonomous stuff
-    }
 
+    }
+    
 	public void teleopPeriodic() {
 	    Scheduler.getInstance().run();
 	}
