@@ -11,7 +11,6 @@ import org.usfirst.frc.team5137.robot.subsystems.Climber;
 import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5137.robot.subsystems.Shooter;
 import org.usfirst.frc.team5137.robot.subsystems.IntakeRoller;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
