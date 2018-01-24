@@ -13,7 +13,7 @@ import org.usfirst.frc.team5137.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5137.robot.subsystems.Shooter;
 import org.usfirst.frc.team5137.robot.subsystems.IntakeRoller;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
@@ -24,7 +24,7 @@ public class Robot extends TimedRobot {
     public static Climber climber;
     
     public static OI oi;
-	Command autonomousCommand;
+	//Command autonomousCommand;
 
     public void robotInit() {
 	    RobotMap.init();
