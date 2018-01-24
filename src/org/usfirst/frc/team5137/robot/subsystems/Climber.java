@@ -11,7 +11,7 @@ public class Climber extends Subsystem {
 	Spark climberMotor = RobotMap.climberMotor;
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new Climb());
+		//setDefaultCommand(new Climb());
 	}
 	
 	public void climb() {

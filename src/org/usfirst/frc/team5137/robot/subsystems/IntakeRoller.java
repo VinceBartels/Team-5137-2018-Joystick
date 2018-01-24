@@ -11,7 +11,7 @@ public class IntakeRoller extends Subsystem {
 	Spark intakeMotor = RobotMap.intakeMotor;
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new Intake());
+		//setDefaultCommand(new Intake());
 	}
 	
 	public void intake() {

@@ -13,7 +13,7 @@ public class Shooter extends Subsystem {
 	Spark shooterMotor = RobotMap.shooterMotor;
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new Shoot());
+		//setDefaultCommand(new Shoot());
 	}
 
 	public void shoot() {
