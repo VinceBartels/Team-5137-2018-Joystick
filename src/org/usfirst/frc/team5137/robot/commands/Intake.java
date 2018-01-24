@@ -11,7 +11,8 @@ public class Intake extends Command {
 	}
 	
 	public void excute() {
-		Robot.intakeRoller.intake(Robot.oi.intakeButton);
+		Robot.intakeRoller.intake();
+		
 	}
 	
 	

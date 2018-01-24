@@ -12,8 +12,9 @@ public class Climb extends Command {
 		
 	}
 	public void execute() {
-		Robot.climber.climb(Robot.oi.climberButton);
+		Robot.climber.climb();
 	}
+	
 	
 	@Override
 	protected boolean isFinished() {

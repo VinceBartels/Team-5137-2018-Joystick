@@ -4,19 +4,11 @@ import org.usfirst.frc.team5137.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Shoot extends Command {
+public class arcadeDrive extends Command {
+
 	
-	public Shoot() {
-		requires(Robot.shooter);
-		
-	}
-	public void execute() {
-		Robot.shooter.Shoot();
-		
-	}
-	protected void end() {
-		Robot.shooter.Stop();
-		
+	public arcadeDrive() {
+		Robot.driveTrain.arcadeDrive();	
 	}
 	
 	@Override
@@ -25,4 +17,5 @@ public class Shoot extends Command {
 		return false;
 	}
 
+	
 }

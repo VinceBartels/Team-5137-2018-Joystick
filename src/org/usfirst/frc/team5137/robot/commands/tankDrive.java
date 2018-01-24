@@ -4,20 +4,14 @@ import org.usfirst.frc.team5137.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Shoot extends Command {
+public class tankDrive extends Command {
+
+	public tankDrive() {
+		Robot.driveTrain.tankDrive();
+		
+	}
 	
-	public Shoot() {
-		requires(Robot.shooter);
-		
-	}
-	public void execute() {
-		Robot.shooter.Shoot();
-		
-	}
-	protected void end() {
-		Robot.shooter.Stop();
-		
-	}
+	
 	
 	@Override
 	protected boolean isFinished() {
@@ -25,4 +19,6 @@ public class Shoot extends Command {
 		return false;
 	}
 
+	
+	
 }

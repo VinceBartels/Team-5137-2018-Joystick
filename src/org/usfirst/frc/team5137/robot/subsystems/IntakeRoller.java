@@ -4,7 +4,6 @@ import org.usfirst.frc.team5137.robot.RobotMap;
 import org.usfirst.frc.team5137.robot.commands.Intake;
 
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class IntakeRoller extends Subsystem {
@@ -16,9 +15,9 @@ public class IntakeRoller extends Subsystem {
 	}
 	
 
-	public void intake(JoystickButton intakeButton) {
+	public void intake() {
+	intakeMotor.set(1);
 	
-		if (intakeButton.get()) intakeMotor.set(1);
 	
 	}
 	

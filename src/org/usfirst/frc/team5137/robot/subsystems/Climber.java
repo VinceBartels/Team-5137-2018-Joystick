@@ -4,7 +4,7 @@ import org.usfirst.frc.team5137.robot.RobotMap;
 import org.usfirst.frc.team5137.robot.commands.Climb;
 
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Climber extends Subsystem {
@@ -18,9 +18,8 @@ public class Climber extends Subsystem {
 		
 	}
 
-	public void climb(JoystickButton climberButton) {
-		if (climberButton.get()) climber.set(1);
-
+	public void climb() {
+		climber.set(1);
 		
 	}
 
