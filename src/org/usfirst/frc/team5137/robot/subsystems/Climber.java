@@ -1,25 +1,25 @@
 package org.usfirst.frc.team5137.robot.subsystems;
 
 import org.usfirst.frc.team5137.robot.RobotMap;
-import org.usfirst.frc.team5137.robot.commands.Intake;
+import org.usfirst.frc.team5137.robot.commands.Climb;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class IntakeRoller extends Subsystem {
+public class Climber extends Subsystem {
 
-	Spark intakeMotor = RobotMap.intakeMotor;
+	Spark climberMotor = RobotMap.climberMotor;
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new Intake());
+		setDefaultCommand(new Climb());
 	}
 	
-	public void intake() {
-		intakeMotor.set(1);
+	public void climb() {
+		climberMotor.set(1);
 	}
-	
+
 	public void stop() {
-		intakeMotor.set(0);
+		climberMotor.set(0);
 	}
 
 }
