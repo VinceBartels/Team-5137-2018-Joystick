@@ -4,22 +4,22 @@ import org.usfirst.frc.team5137.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Intake extends Command {
+public class TankDrive extends Command {
 
-	public Intake() {
-		requires(Robot.intakeRoller);
+	public TankDrive() {
+		requires(Robot.driveTrain);
 	}
 	
 	protected void execute() {
-		Robot.intakeRoller.intake();
+		Robot.driveTrain.tankDrive(Robot.oi.jackBlack);
 	}
 
 	protected void interrupted() {
-		Robot.intakeRoller.stop();
+		Robot.driveTrain.stop();
 	}
 
 	protected boolean isFinished() {
 		return false;
-	} 
+	}
 	
 }

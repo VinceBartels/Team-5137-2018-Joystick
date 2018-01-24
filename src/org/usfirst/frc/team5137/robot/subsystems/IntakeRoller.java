@@ -7,18 +7,19 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class IntakeRoller extends Subsystem {
+
 	Spark intakeMotor = RobotMap.intakeMotor;
 	
-	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new Intake());
+		//setDefaultCommand(new Intake());
 	}
 	
-
 	public void intake() {
-	intakeMotor.set(1);
-	
-	
+		intakeMotor.set(1);
 	}
 	
+	public void stop() {
+		intakeMotor.set(0);
+	}
+
 }

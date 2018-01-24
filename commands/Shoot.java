@@ -17,11 +17,8 @@ public class Shoot extends Command {
 		Robot.shooter.stop();
 	}
 
-
-	
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
 }
