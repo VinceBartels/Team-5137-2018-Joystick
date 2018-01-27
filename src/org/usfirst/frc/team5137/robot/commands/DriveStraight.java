@@ -4,18 +4,20 @@ import org.usfirst.frc.team5137.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class autoDriveStraight extends Command {
-	
+public class DriveStraight extends Command{
 
-	public autoDriveStraight() {
+	public DriveStraight() {
 		requires(Robot.driveTrain);
 		
 	}
-	public void execute() {
-		Robot.driveTrain.autoDriveStraight();
-		
+	
+	protected void execute() {
+		Robot.driveTrain.driveStraight();
 	}
 	protected void interrupted() {
+		Robot.driveTrain.stop();
+	}
+	protected void stop() {
 		Robot.driveTrain.stop();
 		
 	}
