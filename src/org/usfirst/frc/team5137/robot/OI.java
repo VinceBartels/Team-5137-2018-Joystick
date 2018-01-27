@@ -5,6 +5,7 @@ import org.usfirst.frc.team5137.robot.commands.Climb;
 import org.usfirst.frc.team5137.robot.commands.DriveStraight;
 import org.usfirst.frc.team5137.robot.commands.Intake;
 import org.usfirst.frc.team5137.robot.commands.KillSwitch;
+import org.usfirst.frc.team5137.robot.commands.ResetGyro;
 import org.usfirst.frc.team5137.robot.commands.Shoot;
 import org.usfirst.frc.team5137.robot.commands.TankDrive;
 
@@ -22,6 +23,7 @@ public class OI {
 	public JoystickButton tankModeBumper;
 	public JoystickButton DriveStraightButton;
 	public JoystickButton killSwitchButton;
+	public JoystickButton resetGyro;
 	
 	
 	public OI() {
@@ -40,6 +42,9 @@ public class OI {
 		killSwitchButton.toggleWhenPressed(new KillSwitch());
 		DriveStraightButton = new JoystickButton(jackBlack,1);
 		DriveStraightButton.whileHeld(new DriveStraight());
+		resetGyro = new JoystickButton(jackBlack, 7);
+		resetGyro.whileHeld(new ResetGyro());
+		
 		
 	}
 }

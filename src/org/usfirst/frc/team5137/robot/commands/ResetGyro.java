@@ -1,0 +1,28 @@
+package org.usfirst.frc.team5137.robot.commands;
+
+
+import org.usfirst.frc.team5137.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.command.Command;
+
+public class ResetGyro extends Command {
+	ADXRS450_Gyro gyro = RobotMap.gyro;
+	
+	public ResetGyro() {
+		
+	}
+	
+	protected void execute() {
+		gyro.reset();
+		
+		gyro.calibrate();
+	}
+
+	@Override
+	protected boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

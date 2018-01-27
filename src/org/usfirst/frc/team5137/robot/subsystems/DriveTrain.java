@@ -40,16 +40,6 @@ public class DriveTrain extends Subsystem {
 		hotWheels.arcadeDrive(speed, angle*Kp);
 	}
 	
-	public void turnLeft() {
-		leftDriveMotor.set(-0.25);
-		rightDriveMotor.set(0.25);
-		
-	}
-	public void turnRight() {
-		leftDriveMotor.set(0.25);
-		rightDriveMotor.set(-0.25);
-		
-	}
 	public void stop() {
 		slideDriveMotor.set(0);
 		hotWheels.arcadeDrive(0,0);

@@ -58,7 +58,7 @@ public class Robot extends TimedRobot {
     }
     
     public void autonomousPeriodic() {
-		//Scheduler.getInstance().run();
+		Scheduler.getInstance().run();
     }
     
     public void teleopInit() {
