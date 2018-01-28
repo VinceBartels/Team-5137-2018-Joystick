@@ -16,7 +16,7 @@ public class DriveTrain extends Subsystem {
 	ADXRS450_Gyro gyro = RobotMap.gyro;
 	
 	DifferentialDrive hotWheels = RobotMap.hotWheels;
-	double Kp = 0.03;
+	double Kp = 0.3;
 	
 	
 	protected void initDefaultCommand() {
@@ -36,8 +36,8 @@ public class DriveTrain extends Subsystem {
 	public void driveStraight() {
 		double angle = gyro.getAngle();
 		double speed = -0.75;
-		
 		hotWheels.arcadeDrive(speed, angle*Kp);
+		
 	}
 	
 	public void stop() {
